@@ -1,4 +1,6 @@
-# Discovery [![Build Status](https://travis-ci.org/Bilibili/discovery.svg?branch=master)](https://travis-ci.org/Bilibili/discovery)
+# Discovery 
+[![Build Status](https://travis-ci.org/Bilibili/discovery.svg?branch=master)](https://travis-ci.org/Bilibili/discovery) 
+[![Go Report Card](https://goreportcard.com/badge/github.com/Bilibili/discovery)](https://goreportcard.com/report/github.com/Bilibili/discovery)
 
 Discovery is a based service that is production-ready and primarily used at [Bilibili](https://www.bilibili.com/) for locating services for the purpose of load balancing and failover of middle-tier servers.
 
@@ -20,25 +22,27 @@ go build
 
 ### 运行
 ```shell
-./discovry -conf discovery-example.toml
+./discovery -conf discovery-example.toml -alsologtostderr
 ```
+
+`-alsologtostderr`是glog库的flag，表示输出到stderr，输出到目录是`-log_dir="/tmp"`，详细文档[点击查看](https://godoc.org/github.com/golang/glog)
 
 ### 配置文件解读
 
-请详细查看`discovery-example.toml`内注释说明
+请详细查看`cmd/discovery/discovery-example.toml`内注释说明
 
 ### 客户端 
 
-* [API文档](api.md)
-* [GoSDK](naming/client.go)
+* [API文档](doc/api.md)
+* [GoSDK](naming/client.go) [接入示例](naming/example_test.go)
 * [JavaSDK](https://github.com/flygit/discoveryJavaSDK)
 
 ## 背景及设计
 
-[点我了解背后的故事](intro.md)
+* [了解背后的故事](doc/intro.md)
+* [架构设计及原理](doc/arch.md)
+* [B站最佳实践](doc/practice.md)
 
 ## 反馈及讨论
 
-请加微信
-
-<img width="200" height="200" src="discovery_wechat.png" />
+建议优先使用issues，也可加QQ群：716486124

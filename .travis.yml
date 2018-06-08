@@ -17,5 +17,10 @@ script:
     --skip=vendor \
     --skip=.git \
     --tests ./...
+  - go test ./registry/...
+  - go test ./discovery/...
   - cd cmd/discovery
   - go build
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
